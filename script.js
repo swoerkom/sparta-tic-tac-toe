@@ -3,9 +3,10 @@ $(function(event){
 
   var playerX = true;
   var playerY = false;
-   playerXCount = [];
+  var playerXCount = [];
   var playerYCount = [];
   var td = $("td");
+  var gameWon = false;
 
 
 //Changes HTML
@@ -38,22 +39,49 @@ function player()  {
 
 
 
+
 do  {
-
-  $(td).on("click", function (){
-
   player();
 
+  $(td).on("click", function (){
+    var player = $(".playerTurn").html()
+    console.log(player);
+
+
+
+  if ($(td[0]).html() !== ""  && $(td[3]).html() !== "" && $(td[6]).html() !== "") {
+    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[6]).html() !== ""  && $(td[7]).html() !== "" && $(td[8]).html() !== "") {
+    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[0]).html() !== ""  && $(td[4]).html() !== "" && $(td[8]).html() !== "") {
+    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[2]).html() !== ""  && $(td[4]).html() !== "" && $(td[6]).html() !== "") {
+    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[3]).html() !== ""  && $(td[4]).html() !== "" && $(td[5]).html() !== "") {
+    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+  }
 
 })
-  $(playerXCount).each(function(index, todo) {
-    if (playerXCount == "2") {
-      console.log("Winner")
-      console.log(playerXCount);
-    }
 
-})
 } while (gameWon = false);
+
+
+//   // $(playerXCount).each(function(index, todo) {
+//   //   if (playerXCount == "2") {
+//   //     console.log("Winner")
+//   //     console.log(playerXCount);
+//   //   }
+//
+// })
+//
 
 
 // function checkResults(count) {
@@ -136,4 +164,4 @@ do  {
 // if ($(td[2]).html() != "" && $(td[4]).html() && $(td[6]).html()) {
 //
 // if ($(td[3]).html() != "" && $(td[4]).html() && $(td[5]).html()) {
-  })
+});
