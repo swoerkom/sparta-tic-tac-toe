@@ -3,15 +3,14 @@ $(function(event){
 
   var playerX = true;
   var playerY = false;
-  var playerXCount = [];
+   playerXCount = [];
   var playerYCount = [];
-
   var td = $("td");
 
 
 //Changes HTML
-function playerTurn() {
-  $(td).each(function(index, td) {
+function player()  {
+   $(td).each(function(index, td) {
     $(td).on("click", function (){
       if ($(td).html() == "") { //Button can only be clicked if unclicked (if html is empty)
       if (playerX === true) {
@@ -19,35 +18,87 @@ function playerTurn() {
         $(td).addClass("X").html("X");
         playerX = false;
         playerY = true;
-        playerXCount += " " +index;
+        playerXCount.push(index);
+
 
       } else if (playerY === true) {
         $(".playerTurn").html("It is Y's turn");
         $(td).addClass("O").html("O");
         playerY = false;
         playerX = true;
-        playerYCount += " " +index;
+        playerYCount.push(index);
       }
+    } else {
+      $(td).off('click');
     }
-  })
+    });
   })
 }
+
+
+
+
+do  {
+
+  $(td).on("click", function (){
+
+  player();
+
+
 })
+  $(playerXCount).each(function(index, todo) {
+    if (playerXCount == "2") {
+      console.log("Winner")
+      console.log(playerXCount);
+    }
+
+})
+} while (gameWon = false);
 
 
-do {
-  var gameWon = false;
-  playerTurn()
+// function checkResults(count) {
+//   count.forEach(function(item, index, array) {
+//     console.log(count);
+//   }) }
 
-} while gameWon = false;
+
+
+
+
+
+
+  // $(td).on("click", function (){
+  //   if ($(td).html() === "X") {
+  //     checkResults(playerXCount);
+  //     console.log("Test");
+  //
+  //   }
+  //   else  {
+  //     checkResults(playerYCount);
+  //     console.log("test2");
+  //   }
+  //   // checkResults(playerYCount);
+  // }) }
+
+    // if ($(td[0]).html() != "" && $(td[3]).html() && $(td[6]).html()) {
+    //   $("td").html("Game Over").css("background" ,"black").css("color", "white")
+
 
 
 
 
 
 //
-var td = $("td");
-$(td).on("click", function (){
+// IF combiations
+//
+// then gamewon=true
+//
+
+
+
+//
+// var td = $("td");
+// $(td).on("click", function (){
 //   console.log($(td[0]).html());
 
 
@@ -85,55 +136,4 @@ $(td).on("click", function (){
 // if ($(td[2]).html() != "" && $(td[4]).html() && $(td[6]).html()) {
 //
 // if ($(td[3]).html() != "" && $(td[4]).html() && $(td[5]).html()) {
-
-
-//Create a string each time player clicks button. Add the button number to a string.
-//Loop through both Player Y and X strings each time player clicks button - compare against the IF statements.
-
-
-//add each number to player X and player Y. Player wins if one of the IF statements is true
-
-//Display when player wins game
-  //$("td").html("Game Over").css("background" ,"black").css("color", "white")
-
-// }
- });
-
-// do {
-  // playerTurn();
-  //
-  // if $(td[0]).html() == "X") {
-  //   console.log("test")
-  // }
-
-//
-//   ($(td[0]) && $(td[3]) && $(td[6])
-//   $(td).addClass("X").html("X");
-//
-//
-//   $(td).addClass("X").html("X");
-//
-//
-//
-//
-// } while (gameWon = 0);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- //  $(td).each(function(index, td) {
- //    $(td).on("click", function (){
- //      $(td).addClass("X").html("X");
- //      console.log(index);
- //    })
- // });
+  })
