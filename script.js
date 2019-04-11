@@ -45,28 +45,40 @@ do  {
 
   $(td).on("click", function (){
     var player = $(".playerTurn").html()
-    console.log(player);
+    var playerLetter = player.charAt(6);
+    console.log(playerLetter);
 
 
 
   if ($(td[0]).html() !== ""  && $(td[3]).html() !== "" && $(td[6]).html() !== "") {
-    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[0]).html() !== ""  && $(td[1]).html() !== "" && $(td[2]).html() !== "") {
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
+  }
+  if ($(td[1]).html() !== ""  && $(td[4]).html() !== "" && $(td[7]).html() !== "") {
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
   }
 
   if ($(td[6]).html() !== ""  && $(td[7]).html() !== "" && $(td[8]).html() !== "") {
-    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
   }
 
   if ($(td[0]).html() !== ""  && $(td[4]).html() !== "" && $(td[8]).html() !== "") {
-    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
   }
 
   if ($(td[2]).html() !== ""  && $(td[4]).html() !== "" && $(td[6]).html() !== "") {
-    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
   }
 
   if ($(td[3]).html() !== ""  && $(td[4]).html() !== "" && $(td[5]).html() !== "") {
-    $("table").html("Game Over. Player: _ Wins!").css("background" ,"black").css("color", "white")
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
+  }
+
+  if ($(td[2]).html() !== ""  && $(td[9]).html() !== "" && $(td[5]).html() !== "") {
+    $("table").html("Game Over. Player: " +playerLetter+ " Wins!").css("background" ,"black").css("color", "white")
   }
 
 })
